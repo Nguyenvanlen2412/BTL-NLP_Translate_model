@@ -16,9 +16,9 @@ A two-stage neural machine translation system that trains a Transformer from scr
 |---|---|---|
 | Pre-training | General (960K pairs) | 38.05 |
 | Before fine-tuning | Medical test set | 28.60 |
-| After fine-tuning | Medical test set | **39–41** |
+| After fine-tuning | Medical test set | 43.44 |
 
-Fine-tuning for just **3–4 epochs** closes a 9.45-point domain gap and surpasses the general BLEU score — using only ~1.5–2 hours of GPU time.
+Fine-tuning for just **3–4 epochs** closes a 14.84-point domain gap and surpasses the general BLEU score — using only ~1.5–2 hours of GPU time.
 
 ---
 
