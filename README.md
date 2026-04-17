@@ -239,14 +239,6 @@ Training was conducted on Google Colab and Kaggle.
 
 ---
 
-## Citation
-
-```bibtex
-@article{envimed2025,
-  title   = {Xây Dựng và Tinh Chỉnh Mô Hình Transformer cho Dịch Thuật Anh-Việt với Chuyên Ngành Y Tế},
-  author  = {[Author Name]},
-  year    = {2025}
-}
 ```
 
 ---
