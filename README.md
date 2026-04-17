@@ -18,7 +18,7 @@ A two-stage neural machine translation system that trains a Transformer from scr
 | Before fine-tuning | Medical test set | 28.60 |
 | After fine-tuning | Medical test set | 43.44 |
 
-Fine-tuning for just **3–4 epochs** closes a 14.84-point domain gap and surpasses the general BLEU score — using only ~1.5–2 hours of GPU time.
+Fine-tuning for just **4 epochs** closes a 14.84-point domain gap and surpasses the general BLEU score — using only ~1.5–2 hours of GPU time.
 
 ---
 
@@ -67,7 +67,7 @@ Stage 1 — Pre-training
   960K general EN-VI pairs  →  Transformer (38M params)  →  BLEU 38.05
 
 Stage 2 — Fine-tuning
-  322K medical EN-VI pairs  →  Fine-tuned model  →  Medical BLEU 39–41
+  322K medical EN-VI pairs  →  Fine-tuned model  →  Medical BLEU 43.44
 ```
 
 **Stage 1 — Pre-training on General Data**
@@ -86,7 +86,7 @@ The pre-trained model is adapted to the medical domain using a lower learning ra
 | Weight decay | 0.0 | 0.01 |
 | Label smoothing | 0.0 | 0.1 |
 | Warmup | 4,000 steps | 10% of steps |
-| Epochs | 20 | 3–4 |
+| Epochs | 20 | 4 |
 
 The learning rate of `5e-5` proved optimal — conservative enough to preserve general linguistic knowledge while still adapting to medical terminology.
 
@@ -175,19 +175,6 @@ Expected output:
 Bệnh nhân có tăng huyết áp và đái tháo đường type 2.
 ```
 
----
-
-## Fine-Tuning Strategy Comparison
-
-| Strategy | Learning Rate | Medical BLEU |
-|---|---|---|
-| Conservative | 3e-5 | 38–39 |
-| **Moderate (Best)** | **5e-5** | **39–41** |
-| Aggressive | 1e-4 | 37–39 |
-
-The aggressive strategy degrades performance due to catastrophic forgetting of general linguistic structure.
-
----
 
 ## Translation Examples
 
